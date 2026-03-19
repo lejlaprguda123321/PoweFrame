@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoTech –PowerFrame model za demonstraciju mehaničkog kretanja</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("A_VPUoAHfSZUXd5Id");
+})();
+</script>
+
+<style>
+body{
+    margin:0;
+    font-family:"Times New Roman", Helvetica, sans-serif;
+    background:ORANGE;
+}
+
+/* NAVBAR (ULJEPŠANA) */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(90deg,#ff69b4,#ffd700);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 40px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.nav-logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+}
+
+/* underline animacija */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:white;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#ffb6c1,#ffe680);
+    color:#5a005a;
+    padding:70px 20px;
+    text-align:center;
+}
+
+/* LOGO */
+.logo{
+    width:60px;
+    margin-bottom:10px;
+    animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+
+/* SECTIONS */
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:#ff1493;
+}
+
+/* PROIZVOD (NE DIRANO) */
+.proizvod{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.proizvod img{
+    width:100%;
+    border-radius:12px;
+}
+
+/* AKTIVNOSTI (ISTO + BLAGI HOVER) */
+.aktivnost{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    margin-bottom:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:30px;
+    transition:0.3s;
+}
+
+.aktivnost:hover{
+    transform:translateY(-5px);
+}
+
+/* SLIDER (ISTO) */
+.slider{
+    position:relative;
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+}
+
+.slider img.active{display:block;}
+
+.slider button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,105,180,0.6);
+    color:white;
+    border:none;
+    font-size:22px;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
+.slider .prev{left:8px;}
+.slider .next{right:8px;}
+
+/* ROBOT */
+#robot{
+    position:fixed;
+    right:15px;
+    top:50%;
+    font-size:30px;
+    opacity:0.7;
+}
+
+/* FOOTER */
+footer{
+    background:#ff69b4;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="robot">🤖</div>
+
+<nav class="navbar">
+<div class="nav-logo">TechMotion</div>
+
+<ul class="nav-links">
+<li><a href="#proizvod">Proizvod</a></li>
+<li><a href="#kako-radi">Kako radi</a></li>
+<li><a href="#aktivnosti">Aktivnosti</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+</nav>
+
+<header>
+<img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" class="logo">
+<h1>PowerFrame model za demonstraciju mehaničkog kretanja</h1>
+<p>Edukativno i funkcionalno rješenje</p>
+</header>
+
+<section id="proizvod">
+<h2>O proizvodu</h2>
+
+<div class="proizvod">
+
+<img src="zaba123.jpeg">
+
+<div>
+<p>
+Ovaj proizvod predstavlja edukativni model koji demonstrira pretvaranje električne energije u mehaničko kretanje.
+Pokreće se pomoću baterija koje napajaju mehanizam.
+</p>
+
+<p>
+Model je izrađen kao praktično rješenje za učenje osnovnih principa elektrotehnike i mehanike.
+Kroz njegov rad može se jasno vidjeti kako energija prelazi iz jednog oblika u drugi.
+</p>
+
+<p>
+Konstrukcija je stabilna, funkcionalna i jednostavna za korištenje.
+Proizvod je namijenjen edukativnim demonstracijama i školskim projektima.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="kako-radi">
+<h2>Kako funkcioniše model?</h2>
+<div class="kako-radi-box">
+<p>Uređaj koristi baterije kao izvor električne energije koje napajaju motor.</p>
+<p>Žice povezuju baterije i motor. Kada se krug zatvori struja prolazi kroz sistem.</p>
+<p>Motor pretvara električnu energiju u mehaničku energiju.</p>
+<p>Plastični dijelovi prenose pokret.</p>
+</div>
+</section>
+
+<section id="aktivnosti">
+<h2>Aktivnosti firme</h2>
+<div id="aktivnostiContainer"></div>
+</section>
+
+<section id="kontakt">
+
+<h2 style="text-align:center;color:white">Kontakt</h2>
+
+<form id="contact-form">
+
+<input type="hidden" name="contact_number">
+
+<input type="text" name="user_name" placeholder="Ime i prezime" required>
+
+<input type="email" name="user_email" placeholder="Email" required>
+
+<textarea name="message" placeholder="Poruka" required></textarea>
+
+<input type="submit" value="Pošalji">
+
+</form>
+
+<p id="emailStatus"></p>
+
+</section>
+<style>#kontakt {
+    background: linear-gradient(135deg, #ffb6c1, #ffd700); /* pink-yellow */
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+#kontakt h2 {
+    color: #d1006c;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+#kontakt form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* space between fields */
+}
+
+#kontakt input,
+#kontakt textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#kontakt input[type="submit"] {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#kontakt input[type="submit"]:hover {
+    box-shadow: 0 0 15px #ff69b4;
+}
+</style>
+<footer>
+© <span id="year"></span> Lejla Prguda i Aneli Merdzanovic
+</footer>
+
+<script>
+document.getElementById("year").innerText=new Date().getFullYear();
+
+/* robot prati scroll */
+window.addEventListener("scroll",()=>{
+document.getElementById("robot").style.top=(window.scrollY+200)+"px";
+});
+</script>
+
+<!-- FIREBASE I AKTIVNOSTI OSTAVLJENI ISTI -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const app = initializeApp({projectId:"ztgztgzgz"});
+const db = getFirestore(app);
+
+const container=document.getElementById("aktivnostiContainer");
+
+function createHTML(data){
+const imgs=(data.slike||[]).map((u,i)=>`<img src="${u}" class="${i==0?'active':''}">`).join("");
+const txt=(data.tekst||[]).map(p=>`<p>${p}</p>`).join("");
+
+return `
+<div class="aktivnost">
+<div class="slider">
+${imgs}
+<button class="prev">‹</button>
+<button class="next">›</button>
+</div>
+<div class="tekst">
+<h3>${data.naslov}</h3>
+${txt}
+</div>
+</div>`;
+}
+
+function initSliders(){
+document.querySelectorAll(".slider").forEach(sl=>{
+const imgs=sl.querySelectorAll("img");
+if(imgs.length===0) return;
+
+let i=0;
+sl.querySelector(".next").onclick=()=>{i=(i+1)%imgs.length;show();}
+sl.querySelector(".prev").onclick=()=>{i=(i-1+imgs.length)%imgs.length;show();}
+
+function show(){
+imgs.forEach(im=>im.classList.remove("active"));
+imgs[i].classList.add("active");
+}
+});
+}
+
+async function load(){
+const snap=await getDocs(collection(db,"aktivnosti"));
+snap.forEach(d=>container.innerHTML+=createHTML(d.data()));
+initSliders();
+}
+
+load();
+</script>
+
+</body>
+</html>
